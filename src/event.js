@@ -4,10 +4,13 @@
 var _define = {
   event_id: {
     connpass: [{
-        url: 'https://engineers.connpass.com/event/110724/',
-        title: '読書の技術を勉強する会 #1'
+        url: 'https://engineers.connpass.com/event/113403/',
+        title: '目標設定の技術を勉強する会 #1'
+      },
+      {
+        url: 'https://engineers.connpass.com/event/112692/',
+        title: 'カジュアルLT大会 #1'
       }
-
     ],
     techplay: [
       705867 // 忘年会

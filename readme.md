@@ -8,7 +8,7 @@ feedチャネルで使用しているあねきぼっとのGAS部分。
 誰でも拡張可能なように以下の実装を行う。  
 
 - 必須
-  - [ ] APIKeyやURLのプロパティストア化
+  - [x] APIKeyやWebhookURLのプロパティストア化
   - [ ] connpassとtechplayから取得する情報をスプレッドシート参照するように変更
     - [ ] connpassの方はタイトルをWebページから取得できるようにする
   - [ ] SlackApp化
