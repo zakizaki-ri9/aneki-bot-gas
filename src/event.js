@@ -4,12 +4,10 @@
 var _define = {
   event_id: {
     connpass: [{
-        url: 'https://engineers.connpass.com/event/113403/',
-        title: '目標設定の技術を勉強する会 #1'
+        url: 'https://engineers.connpass.com/event/112692/'
       },
       {
-        url: 'https://engineers.connpass.com/event/112692/',
-        title: 'カジュアルLT大会 #1'
+        url: 'https://engineers.connpass.com/event/113403/'
       }
     ],
     techplay: [
@@ -57,7 +55,7 @@ function main() {
   });
   var resultConnpass = [];
   _define.event_id.connpass.forEach(function (obj) {
-    var eventInfo = getConnpassInfoNetlify(obj.url, obj.title);
+    var eventInfo = getConnpassInfoNetlify(obj.url);
     if (eventInfo !== null) {
       resultConnpass.push(eventInfo);
     }
@@ -171,22 +169,21 @@ function createTodayMessage() {
 }
 
 /**
- * NetlifyにデプロイされているTechplayスクレイピングAPIを叩き、
+ * NetlifyにデプロイされているConnpassスクレイピングAPIを叩き、
  * Slackに返却すべき情報用に整形して返却
  *
- * @param {int} eventId techplayのイベントID
+ * @param {int} eventUrl connpassのイベントURL
  * @return {object} bot通知に必要な情報のみを詰め込んだオブジェクト
  *                  ただし、本日日付以降のイベントならnullを返却
  **/
-function getConnpassInfoNetlify(eventUrl, title) {
+function getConnpassInfoNetlify(eventUrl) {
 
   // URL設定
   var url = _define.url.connpass;
 
   // Functionに渡すパラメータの準備
   var payload = {
-    "event_url": eventUrl,
-    "title": title
+    "event_url": eventUrl
   };
 
   var options = {
@@ -195,10 +192,10 @@ function getConnpassInfoNetlify(eventUrl, title) {
   };
 
   // Function実行
-  var techplayInfo = UrlFetchApp.fetch(url, options);
+  var connpassInfo = UrlFetchApp.fetch(url, options);
 
   // オブジェクト化
-  var json = JSON.parse(techplayInfo.getContentText());
+  var json = JSON.parse(connpassInfo.getContentText());
   Logger.log(json);
 
   // bot通知に必要な情報を作成
@@ -218,7 +215,7 @@ function getConnpassInfoNetlify(eventUrl, title) {
     _todayYYYYMMDD.format("YYYY-MM-DD") === day.format("YYYY-MM-DD")) {
     result = {
       "pretext": "",
-      "title": title,
+      "title": json.title,
       "title_link": eventUrl,
       "text": textDay + textHuman,
       "mrkdwn": true
@@ -227,7 +224,7 @@ function getConnpassInfoNetlify(eventUrl, title) {
 
   // _notificationへ情報セット
   _notification.push({
-    title: title,
+    title: json.title,
     title_link: eventUrl,
     day: day,
     time_from: "",
