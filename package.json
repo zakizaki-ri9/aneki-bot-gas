@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@google/clasp": "^1.7.0"
+    "@google/clasp": "^2.1.0"
   }
 }
