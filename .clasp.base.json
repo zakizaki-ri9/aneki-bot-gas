@@ -1,0 +1,6 @@
+{
+  "scriptId": "ここにscriptIdを書いてください",
+  "rootDir": "src",
+  "fileExtension": "ts",
+  "filePushOrder": ["hunho.ts"]
+}
