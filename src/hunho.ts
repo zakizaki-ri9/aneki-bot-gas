@@ -5,9 +5,10 @@ function push_hunho() {
   const properties = PropertiesService.getScriptProperties();
 
   let data = {
-    "text": "分報って知ってるか？\n知らない人は見ておいてくれよな！\n" +
-      properties.getProperty('HUNHO_ESA_URL'),
-    "unfurl_links": true,
+    text:
+      "分報って知ってるか？\n知らない人は見ておいてくれよな！\n" +
+      properties.getProperty("HUNHO_ESA_URL"),
+    unfurl_links: true
   };
 
   let option: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {
@@ -16,5 +17,5 @@ function push_hunho() {
     payload: JSON.stringify(data)
   };
 
-  UrlFetchApp.fetch(properties.getProperty('SLACK_POST_URL_TEST'), option);
+  UrlFetchApp.fetch(properties.getProperty("SLACK_POST_URL_TEST"), option);
 }
