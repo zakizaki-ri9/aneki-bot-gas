@@ -21,8 +21,8 @@ export namespace Aneki {
       public spitOut(url: string) {
         // Slackへポスト
         const option: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {
-          contentType: "application/json",
-          method: "post",
+          contentType: 'application/json',
+          method: 'post',
           payload: JSON.stringify({ attachments: this.attachments })
         }
         UrlFetchApp.fetch(url, option)
@@ -38,10 +38,10 @@ export namespace Aneki {
    */
   export namespace GasSettingUrls {
     export enum PropertyName {
-      connpass = "CONNPASS_INFO_URL",
-      techplay = "TECHPLAY_INFO_URL",
-      slackPost = "SLACK_POST_URL",
-      slackPostTest = "SLACK_POST_URL_TEST"
+      connpass = 'CONNPASS_INFO_URL',
+      techplay = 'TECHPLAY_INFO_URL',
+      slackPost = 'SLACK_POST_URL',
+      slackPostTest = 'SLACK_POST_URL_TEST'
     }
     export function get(propertyName: PropertyName): string | null {
       return PropertiesService.getScriptProperties().getProperty(
@@ -54,10 +54,10 @@ export namespace Aneki {
 function test_main() {
   const slackMessages = new Aneki.Slack.Messages()
   slackMessages.stack({
-    pretext: "test_preText",
-    title: "title_Test",
-    title_link: "https://trattoria-e-bar-porto-yamanashi.netlify.com/",
-    text: "text_Test",
+    pretext: 'test_preText',
+    title: 'title_Test',
+    title_link: 'https://trattoria-e-bar-porto-yamanashi.netlify.com/',
+    text: 'text_Test',
     mrkdwn: true
   })
   const url = Aneki.GasSettingUrls.get(
@@ -66,6 +66,6 @@ function test_main() {
   if (url) {
     slackMessages.spitOut(url)
   } else {
-    Logger.log("slack post url is null!!")
+    Logger.log('slack post url is null!!')
   }
 }
