@@ -2,7 +2,7 @@ interface ISlackMessage {
   preText: string
   title: string
   titleLink: string
-  text: string;
+  text: string
   mrkdwn: boolean
 }
 

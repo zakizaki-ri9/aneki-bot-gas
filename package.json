@@ -16,7 +16,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.js": [
+      "*.ts": [
         "yarn run tslint --fix",
         "git add"
       ]
