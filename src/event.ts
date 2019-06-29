@@ -3,7 +3,7 @@ interface ISlackMessage {
   title: string
   titleLink: string
   text: string
-  mrkdwn: boolean
+  mrkdwn: boolean;
 }
 
 namespace GasSettingUrls {
