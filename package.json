@@ -4,6 +4,7 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.1.0",
-    "tslint": "^5.17.0"
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.2"
   }
 }

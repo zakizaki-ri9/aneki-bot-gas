@@ -1,0 +1,5 @@
+{
+  "tslint.configFile": "./tslint.json",
+  "prettier.tslintIntegration": true,
+  "tslint.autoFixOnSave": true
+}

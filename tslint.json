@@ -5,7 +5,8 @@
   "rules": {
     "no-namespace": false,
     "no-reference": false,
-    "trailing-comma": false
+    "trailing-comma": false,
+    "semicolon": [true, "never"]
   },
   "rulesDirectory": []
 }

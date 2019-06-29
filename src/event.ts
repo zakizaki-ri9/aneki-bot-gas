@@ -1,11 +1,9 @@
-// @ts-nocheck
-
 interface ISlackMessage {
-  preText: string;
-  title: string;
-  titleLink: string;
-  text: string;
-  mrkdwn: boolean;
+  preText: string
+  title: string
+  titleLink: string
+  text: string
+  mrkdwn: boolean
 }
 
 namespace GasSettingUrls {
@@ -18,6 +16,6 @@ namespace GasSettingUrls {
   function get(propertyName: PropertyName) {
     PropertiesService.getDocumentProperties().getProperty(
       propertyName.toString()
-    );
+    )
   }
 }
