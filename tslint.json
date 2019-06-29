@@ -6,7 +6,8 @@
     "no-namespace": false,
     "no-reference": false,
     "trailing-comma": false,
-    "semicolon": [true, "never"]
+    "semicolon": [true, "never"],
+    "indent": [true, "spaces", 2]
   },
   "rulesDirectory": []
 }
