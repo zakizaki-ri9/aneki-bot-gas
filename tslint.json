@@ -7,7 +7,9 @@
     "no-reference": false,
     "trailing-comma": false,
     "semicolon": [true, "never"],
-    "indent": [true, "spaces", 2]
+    "indent": [true, "spaces", 2],
+    "no-console": false,
+    "object-literal-sort-keys": false
   },
   "rulesDirectory": []
 }
