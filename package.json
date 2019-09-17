@@ -4,9 +4,11 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
     "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
-    "tslint": "^5.17.0",
     "typescript": "^3.5.2"
   },
   "husky": {
@@ -17,7 +19,7 @@
   "lint-staged": {
     "linters": {
       "*.ts": [
-        "yarn run tslint --fix",
+        "yarn run eslint --fix",
         "git add"
       ]
     },

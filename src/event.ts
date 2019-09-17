@@ -37,35 +37,36 @@ export namespace Aneki {
    * Scriptプロパティの情報を取得するための名前空間
    */
   export namespace GasSettingUrls {
+    // export function get(propertyName: PropertyName): string | null {
+    //   return PropertiesService.getScriptProperties().getProperty(
+    //     propertyName.toString()
+    //   )
+    // }
+
     export enum PropertyName {
       connpass = 'CONNPASS_INFO_URL',
       techplay = 'TECHPLAY_INFO_URL',
       slackPost = 'SLACK_POST_URL',
       slackPostTest = 'SLACK_POST_URL_TEST'
     }
-    export function get(propertyName: PropertyName): string | null {
-      return PropertiesService.getScriptProperties().getProperty(
-        propertyName.toString()
-      )
-    }
   }
 }
 
-function testMain() {
-  const slackMessages = new Aneki.Slack.Messages()
-  slackMessages.stack({
-    pretext: 'test_preText',
-    title: 'title_Test',
-    title_link: 'https://trattoria-e-bar-porto-yamanashi.netlify.com/',
-    text: 'text_Test',
-    mrkdwn: true
-  })
-  const url = Aneki.GasSettingUrls.get(
-    Aneki.GasSettingUrls.PropertyName.slackPostTest
-  )
-  if (url) {
-    slackMessages.spitOut(url)
-  } else {
-    Logger.log('slack post url is null!!')
-  }
-}
+// function testMain() {
+//   const slackMessages = new Aneki.Slack.Messages()
+//   slackMessages.stack({
+//     pretext: 'test_preText',
+//     title: 'title_Test',
+//     title_link: 'https://trattoria-e-bar-porto-yamanashi.netlify.com/',
+//     text: 'text_Test',
+//     mrkdwn: true
+//   })
+//   const url = Aneki.GasSettingUrls.get(
+//     Aneki.GasSettingUrls.PropertyName.slackPostTest
+//   )
+//   if (url) {
+//     slackMessages.spitOut(url)
+//   } else {
+//     Logger.log('slack post url is null!!')
+//   }
+// }
